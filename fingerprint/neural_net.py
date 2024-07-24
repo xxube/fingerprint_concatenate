@@ -1,7 +1,7 @@
 import autograd.numpy as np
 from autograd.scipy.misc import logsumexp
 from util import memoize, WeightsParser
-from rdkit_utils import smiles_to_fps
+from rdkit_utils import convert_smiles_to_fingerprints
 
 def create_mean_predictor(loss_func):
     parser = WeightsParser()
