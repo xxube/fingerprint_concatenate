@@ -2,8 +2,8 @@ import autograd.numpy as np
 import autograd.numpy.random as npr
 from util import memoize, WeightsParser
 from rdkit_utils import smiles_to_fps
-from build_convnet import build_convnet_fingerprint_fun
-from build_vanilla_net import build_fingerprint_deep_net
+from convnet import build_convnet_fp_fun
+from neural_net import build_fp_deep_net
 
 def create_double_conv_deep_net(conv_params, net_params, fp_l2_penalty=0.0):
     """Returns loss_fun(all_weights, smiles, targets), pred_fun, combined_parser."""
@@ -37,7 +37,7 @@ def create_double_convnet_fp_func(**kwargs):
 def create_double_morgan_deep_net(fp_length, fp_depth, net_params):
     empty_parser = WeightsParser()
     morgan_fp_func = create_double_morgan_fp_func(fp_length, fp_depth)
-    return build_fingerprint_deep_net(net_params, morgan_fp_func, empty_parser, 0)
+    return build_fp_deep_net(net_params, morgan_fp_func, empty_parser, 0)
 
 def create_double_morgan_fp_func(fp_length=512, fp_radius=4):
     def generate_fps_from_smiles(weights, smiles_tuple):
