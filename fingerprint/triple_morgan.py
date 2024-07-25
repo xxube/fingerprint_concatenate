@@ -4,9 +4,9 @@
 import autograd.numpy as np
 import autograd.numpy.random as npr
 from util import memoize, WeightsParser
-from rdkit_utils import smiles_to_fps
-from build_convnet import build_convnet_fingerprint_fun
-from build_vanilla_net import build_fingerprint_deep_net
+from rdkit_utils import convert_smiles_to_fingerprints
+from convnet import build_convnet_fp_fun
+from neural_net import build_fp_deep_net
 
 def create_triple_conv_deep_net(conv_params, net_params, fp_l2_penalty=0.0):
 
