@@ -2,10 +2,7 @@ import autograd.numpy as np
 from autograd.scipy.misc import logsumexp
 from features import num_atom_features, num_bond_features
 from util import memoize, WeightsParser
-from mol_graph import graph_from_smiles_tuple, degrees
-from neural_net import build_fp_deep_net, relu_activation, batch_norm
 
-@memoize
 def smiles_to_array_rep(smiles):
     molgraph = graph_from_smiles_tuple(smiles)
     arrayrep = {
