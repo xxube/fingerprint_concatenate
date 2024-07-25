@@ -6,10 +6,6 @@ from sklearn.base import BaseEstimator, RegressorMixin
 from rdkit import Chem
 from rdkit.Chem import AllChem
 import inspect
-from neuralfingerprint import build_double_morgan_deep_net, relu
-from neuralfingerprint import build_double_conv_deep_net, adam
-from neuralfingerprint import build_batched_grad, categorical_nll 
-from neuralfingerprint import normalize_array
 
 class ReactionEstimator(BaseEstimator, RegressorMixin):
     #classification 
