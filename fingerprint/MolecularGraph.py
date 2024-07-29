@@ -93,3 +93,4 @@ def create_graph_from_smiles_tuple(smiles_tuple):
 
     combined_graph.organize_nodes_by_degree('atom')
     return combined_graph
+
