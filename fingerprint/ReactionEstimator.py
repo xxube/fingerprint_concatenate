@@ -109,3 +109,5 @@ class ReactionEstimator(BaseEstimator, RegressorMixin):
     def score(self, X, y):
         error = categorical_nll(self.predict(X), y, self.other_param_dict['num_outputs']) 
         return error
+
+
